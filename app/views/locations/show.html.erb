@@ -18,11 +18,13 @@
 
       <h3>The closest buses are...</h3>
       <% @buses.each do |bus| %>
-        <p>
-          <strong>Route:</strong> <%= bus["ROUTE"] %> <%= bus["DIRECTION"] %><br>
-          <strong>Bus Number:</strong> <%= bus["VEHICLE"] %><br>
-          <strong>Next Stop: </strong> <%= bus["TIMEPOINT"] %><br>
-        </p>
+        <div class="well">
+          <p>
+            <strong>Route:</strong> <%= bus["ROUTE"] %> <%= bus["DIRECTION"] %><br>
+            <strong>Bus Number:</strong> <%= bus["VEHICLE"] %><br>
+            <strong>Next Stop: </strong> <%= bus["TIMEPOINT"] %><br>
+          </p>
+        </div>
       <% end %>
 
     </div>
