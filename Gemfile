@@ -42,6 +42,8 @@ gem 'geocoder'
 
 gem 'stamp'
 
+gem 'figaro'
+
 # ** End of My Gems **
 
 group :development, :test do
