@@ -1,33 +1,37 @@
-<div class="container-fluid">
+<br>
+<div class="text-center">
+  <%= image_tag("orange-bus.png", size: "100x50") %>
+  <h1>Time to Get on the Bus!</h1>
+</div>
+
+<div class="container-fluid" style="display: inline-block;">
   <div class="row">
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-6 col-md-push-2">
 
-      <p id="notice"><%= notice %></p>
+        <p id="notice"><%= notice %></p>
 
-      <h1>Your Escape Bus!</h1>
+        <h3 class="text-muted">Your current location</h3>
 
-      <h3 class="text-muted">Your current location</h3>
+        <p class="text-muted">
+          <%= @location.full_street_address %> <small><%= link_to fa_icon('pencil', text: 'Edit'), edit_location_path(@location) %></small>
+        </p>
 
-      <p class="text-muted">
-        <%= @location.full_street_address %> <small><%= link_to fa_icon('pencil', text: 'Edit'), edit_location_path(@location) %></small>
-      </p>
-
-      <div id="map-canvas">
-
-      </div>
-
-      <h3>The closest buses are...</h3>
-      <% @buses.each do |bus| %>
-        <div class="well">
-          <p>
-            <strong>Route:</strong> <%= bus["ROUTE"] %> <%= bus["DIRECTION"] %><br>
-            <strong>Bus Number:</strong> <%= bus["VEHICLE"] %><br>
-            <strong>Next Stop: </strong> <%= bus["TIMEPOINT"] %><br>
-          </p>
-        </div>
-      <% end %>
-
+        <div id="map-canvas"></div>
     </div>
+    <div class="col-md-6 col-md-push-4">
+        <h3>The closest buses are...</h3>
+        <br>
+        <% @buses.each do |bus| %>
+          <div class="well">
+            <p>
+              <strong>Route:</strong> <%= bus["ROUTE"] %> <%= bus["DIRECTION"] %><br>
+              <strong>Bus Number:</strong> <%= bus["VEHICLE"] %><br>
+              <strong>Next Stop: </strong> <%= bus["TIMEPOINT"] %><br>
+            </p>
+          </div>
+        <% end %>
+    </div>
+
   </div>
 </div>
 

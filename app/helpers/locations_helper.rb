@@ -9,8 +9,17 @@ module LocationsHelper
 
   def is_nearby?(user_lat, user_long, bus_lat, bus_long)
     max_distance = 0.01
-    # def is_nearby?(user_lat, user_long, bus_lat, bus_long, mx_distance)
-    # max_distance = mx_distance.to_f
+  # add user options for radius
+  # def is_nearby?(user_lat, user_long, bus_lat, bus_long, mx_distance)
+  #   if mx_distance == '1 mile'
+  #     max_distance = 0.02
+  #   elsif mx_distance == '1/2 mile'
+  #     max_distance = 0.01
+  #   elsif mx_distance == '1/4 mile'
+  #     max_distance = 0.005
+  #   else
+  #     max_distance = 0.01
+  #   end
 
     difference_latitudes = user_lat - bus_lat.to_f
 

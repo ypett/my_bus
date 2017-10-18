@@ -7,3 +7,14 @@
   margin: 0;
   padding: 0;
 }
+
+@keyframes bus {
+    0%   {left:0px; top:0px;}
+    15%  {left:100px; top:0px;}
+    30%  {left:200px; top:0px;}
+    45%  {left:300px; top:0px;}
+    60%  {left:400px; top:0px;}
+    75%  {left:500px; top:0px;}
+    90%  {left:600px; top:0px;}
+    105% {left:700px; top:0px;}
+}
