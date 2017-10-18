@@ -17,7 +17,14 @@ class LocationsController < ApplicationController
 
     @buses.select! do |bus|
       is_nearby?(@location.latitude, @location.longitude, bus["LATITUDE"], bus["LONGITUDE"])
+      # is_nearby?(@location.latitude, @location.longitude, bus["LATITUDE"], bus["LONGITUDE"], @max_distance)
     end
+
+    if @buses.empty?
+      flash[:notice] = "Not really that close. :( Time to walk, bike, taxi, Uber, or Enter a new location."
+      redirect_to action: 'new'
+    end
+
   end
 
   # GET /locations/new

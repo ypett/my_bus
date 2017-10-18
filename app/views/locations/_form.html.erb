@@ -18,7 +18,38 @@
 
   <div class="field form-group">
     <%= form.label :city %>
-    <%= form.text_field :city, id: :location_city, class: 'form-control' %>
+    <% @cities = ['Atlanta',
+                  'Alpharetta',
+                  'Avondale Estates',
+                  'Chamblee',
+                  'Clarkston',
+                  'College Park',
+                  'Decatur',
+                  'Doraville',
+                  'Dunwoody',
+                  'East Point',
+                  'Ellenwood',
+                  'Fairburn',
+                  'Forest Park',
+                  'Hapeville',
+                  'Jonesboro',
+                  'Lake City',
+                  'Lovejoy',
+                  'Lithonia',
+                  'Morrow',
+                  'Palmetto',
+                  'Riverdale',
+                  'Roswell',
+                  'Sandy Springs',
+                  'Stone Mountain',
+                  'Union City'] %>
+    <%= form.collection_select :city, @cities.sort, :to_s, :to_s, include_blank: "Atlanta" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :max_distance %>
+    <% @max_distances = [ '0.01', '0.2', '0.5', '1' ] %>
+    <%= form.collection_select :max_distance, @max_distances.sort, :to_f, :to_f, include_blank: false %>
   </div>
 
   <div class="actions form-group">

@@ -9,6 +9,8 @@ module LocationsHelper
 
   def is_nearby?(user_lat, user_long, bus_lat, bus_long)
     max_distance = 0.01
+    # def is_nearby?(user_lat, user_long, bus_lat, bus_long, mx_distance)
+    # max_distance = mx_distance.to_f
 
     difference_latitudes = user_lat - bus_lat.to_f
 
