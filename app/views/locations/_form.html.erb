@@ -43,7 +43,7 @@
                   'Sandy Springs',
                   'Stone Mountain',
                   'Union City'] %>
-    <%= form.collection_select :city, @cities.sort, :to_s, :to_s, include_blank: "Atlanta" %>
+    <%= form.collection_select :city, @cities.sort, :to_s, :to_s, selected: 'Atlanta' %>
   </div>
 
   <div class="actions form-group text-center">

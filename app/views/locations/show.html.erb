@@ -1,14 +1,19 @@
 <br>
 <div class="text-center">
   <%= image_tag("orange-bus.png", size: "100x50") %>
+
   <h1>Time to Get on the Bus!</h1>
 </div>
+
+
 
 <div class="container-fluid" style="display: inline-block;">
   <div class="row">
     <div class="col-md-6 col-md-push-2">
 
         <p id="notice"><%= notice %></p>
+
+        <%= link_to 'New Location', new_location_path, class: 'btn btn-info' %>
 
         <h3 class="text-muted">Your current location</h3>
 
@@ -17,6 +22,7 @@
         </p>
 
         <div id="map-canvas"></div>
+
     </div>
 
     <div class="col-md-6 col-md-push-4">
